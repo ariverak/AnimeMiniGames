@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using AnimeMiniGames.Views;
+using Prism.Navigation;
 using Prism.Unity;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,10 @@ namespace AnimeMiniGames
 
         protected override void RegisterTypes()
         {
+            Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<SequenceGame>();
+            Container.RegisterTypeForNavigation<Home>();
         }
     }
 }

@@ -9,6 +9,7 @@ using Android.OS;
 using Prism;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
+using Xamarin.Forms;
 
 namespace AnimeMiniGames.Droid
 {
@@ -21,7 +22,7 @@ namespace AnimeMiniGames.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            Forms.SetFlags("FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
         }

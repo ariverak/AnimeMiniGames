@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AnimeMiniGames.Views.SequenceGame">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Image">
+                <Setter Property="Opacity" Value="0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label  Grid.ColumnSpan="3" Grid.Row="0" FontSize="Large" FontAttributes="Bold"
+               HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+               Text="{Binding Intrucciones}"/>
+        <Image  Grid.ColumnSpan="3" Grid.Row="0" Opacity="1" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Source="{Binding SequencePhoto}"/>
+
+        <Image x:Name="Box1" IsEnabled="{Binding Enabled}" Source="{Binding Photo1}" Grid.Row="1" Grid.Column="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box1},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image x:Name="Box2" IsEnabled="{Binding Enabled}" Source="{Binding Photo2}" Grid.Row="1" Grid.Column="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box2},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image x:Name="Box3" IsEnabled="{Binding Enabled}" Source="{Binding Photo3}" Grid.Row="1" Grid.Column="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box3},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image x:Name="Box4" IsEnabled="{Binding Enabled}" Source="{Binding Photo4}" Grid.Row="2" Grid.Column="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box4},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image x:Name="Box5" IsEnabled="{Binding Enabled}" Source="{Binding Photo5}" Grid.Row="2" Grid.Column="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box5},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image x:Name="Box6" IsEnabled="{Binding Enabled}" Source="{Binding Photo6}" Grid.Row="2" Grid.Column="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box6},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image x:Name="Box7" IsEnabled="{Binding Enabled}" Source="{Binding Photo7}" Grid.Row="3" Grid.Column="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box7},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+        <Image x:Name="Box8" IsEnabled="{Binding Enabled}" Source="{Binding Photo8}" Grid.Row="3" Grid.Column="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box8},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image x:Name="Box9" IsEnabled="{Binding Enabled}" Source="{Binding Photo9}" Grid.Row="3" Grid.Column="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhotoTapCommand}" CommandParameter="{Binding Source={x:Reference Box9},Path=Source}"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+    </Grid>
+</ContentPage>
